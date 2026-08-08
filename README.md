@@ -102,7 +102,7 @@ go run main.go
 
 The server starts on `http://ip:3030`, with the API mounted under `/api/v1`. The `users` table is created automatically on startup.
 
-## 📡 API Reference
+##  API Reference
 
 Base URL: `http://ip:3030/api/v1`
 
