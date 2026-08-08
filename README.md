@@ -150,7 +150,7 @@ curl -X DELETE http://ip:3030/api/v1/user/uuid \
   -d '{"uuid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"}'
 ```
 
-## 🗄️ Schema
+##  Schema
 
 ```sql
 CREATE TABLE IF NOT EXISTS users (
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS users (
 );
 ```
 
-## 🗺️ Roadmap
+##  Roadmap
 
 - [ ] Environment-based DB configuration (`.env` / `os.Getenv`), including `InitDB_Production`
 - [ ] Login endpoint with JWT issuance
@@ -169,10 +169,10 @@ CREATE TABLE IF NOT EXISTS users (
 - [ ] Unique constraints / indexes on `uuid` and `username`
 - [ ] Test coverage
 
-## 🤝 Contributing
+##  Contributing
 
 Issues and pull requests are welcome — this project is still taking shape, so feedback on structure and API design is especially appreciated.
 
-## 📄 License
+##  License
 
 Distributed under the [MIT License](./LICENSE).
