@@ -8,7 +8,7 @@ import (
 )
 
 func InitDB() *sql.DB {
-	connStr := "user=postgres password=123 dbname=v1_db_helpers sslmode=disable"
+	connStr := "user= password= dbname= sslmode="
 	db, err := sql.Open("pgx", connStr)
 	if err != nil {
 		log.Fatalf("Error: %v", err)
