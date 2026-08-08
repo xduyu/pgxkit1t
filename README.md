@@ -22,16 +22,16 @@ It handles the essentials: creating users with hashed passwords, listing them, e
 
 > **Heads up:** this is a work-in-progress / learning project. The API surface and package layout may still shift. See [Roadmap](#roadmap) for what's planned.
 
-## ✨ Features
+##  Features
 
-- 🔐 **Password hashing** with bcrypt — plaintext passwords never touch the database
-- 🆔 **UUID-based identity** alongside numeric IDs, generated per user
-- 🧱 **Raw SQL** via `pgx` — no ORM, no query builder, no hidden N+1 queries
-- ⚡ **Fiber v3** — fast, expressive routing
-- ⏱️ **Request timing middleware** out of the box
-- 🧩 **Clean package separation** — handlers, DB helpers, and shared structures each live in their own layer
+-  **Password hashing** with bcrypt — plaintext passwords never touch the database
+-  **UUID-based identity** alongside numeric IDs, generated per user
+-  **Raw SQL** via `pgx` — no ORM, no query builder, no hidden N+1 queries
+-  **Fiber v3** — fast, expressive routing
+-  **Request timing middleware** out of the box
+-  **Clean package separation** — handlers, DB helpers, and shared structures each live in their own layer
 
-## 🧰 Tech Stack
+##  Tech Stack
 
 | Layer | Library |
 | HTTP framework | [Fiber v3](https://github.com/gofiber/fiber) |
@@ -40,7 +40,7 @@ It handles the essentials: creating users with hashed passwords, listing them, e
 | Password hashing | [golang.org/x/crypto/bcrypt](https://pkg.go.dev/golang.org/x/crypto/bcrypt) |
 | Language | Go 1.25+ |
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 .
@@ -64,7 +64,7 @@ It handles the essentials: creating users with hashed passwords, listing them, e
 └── LICENSE                      # MIT
 ```
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Clone the repo
 
@@ -100,11 +100,11 @@ go mod tidy
 go run main.go
 ```
 
-The server starts on `http://localhost:3030`, with the API mounted under `/api/v1`. The `users` table is created automatically on startup.
+The server starts on `http://ip:3030`, with the API mounted under `/api/v1`. The `users` table is created automatically on startup.
 
 ## 📡 API Reference
 
-Base URL: `http://localhost:3030/api/v1`
+Base URL: `http://ip:3030/api/v1`
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -118,34 +118,34 @@ Base URL: `http://localhost:3030/api/v1`
 
 **Create a user**
 ```bash
-curl -X POST http://localhost:3030/api/v1/user \
+curl -X POST http://ip:3030/api/v1/user \
   -H "Content-Type: application/json" \
   -d '{"username": "ivan", "password": "secret123"}'
 ```
 
 **List users**
 ```bash
-curl http://localhost:3030/api/v1/users
+curl http://ip:3030/api/v1/users
 ```
 Passwords are never returned — only `id`, `uuid`, and `username`.
 
 **Update a username**
 ```bash
-curl -X PATCH http://localhost:3030/api/v1/user/id \
+curl -X PATCH http://ip:3030/api/v1/user/id \
   -H "Content-Type: application/json" \
   -d '{"id": 1, "data": {"username": "new_name"}}'
 ```
 
 **Delete by id**
 ```bash
-curl -X DELETE http://localhost:3030/api/v1/user/id \
+curl -X DELETE http://ip:3030/api/v1/user/id \
   -H "Content-Type: application/json" \
   -d '{"id": 1}'
 ```
 
 **Delete by uuid**
 ```bash
-curl -X DELETE http://localhost:3030/api/v1/user/uuid \
+curl -X DELETE http://ip:3030/api/v1/user/uuid \
   -H "Content-Type: application/json" \
   -d '{"uuid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"}'
 ```
